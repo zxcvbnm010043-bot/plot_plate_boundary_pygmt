@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>印度板塊火山與地震景觀特色</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        #map { width: 100%; height: 600px; }
+        .info { padding: 20px; max-width: 800px; margin: auto; }
+        h1, h2 { text-align: center; }
+        ul { line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <h1>印度板塊火山與地震景觀特色</h1>
+
+    <div id="map"></div>
+
+    <div class="info">
+        <h2>地理與景觀特色</h2>
+        <p>印度板塊自古以來持續向北擠壓歐亞板塊，造成多樣的地形與景觀：</p>
+        <ul>
+            <li><strong>高山與峽谷：</strong> 喜馬拉雅山脈因板塊碰撞而隆起，形成世界最高峰與深谷。</li>
+            <li><strong>火山：</strong> 例如Barren Island和Narcondam火山，火山活動塑造了小島地形與熔岩地貌。</li>
+            <li><strong>地震區：</strong> 歷史大地震頻繁，如1950年阿薩姆－西藏地震、2004年印度洋大地震，造成山崩、地裂及海嘯，影響沿岸景觀。</li>
+        </ul>
+        <p>這些地質作用使印度板塊區域的自然景觀極具壯觀與多樣性。</p>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // 建立地圖
+        var map = L.map('map').setView([20, 80], 4);
+
+        // 加入底圖
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 火山資料
+        var volcanoes = [
+            {name: "Barren Island", lat: 11.27, lon: 83.53},
+            {name: "Narcondam", lat: 12.28, lon: 93.87},
+            {name: "Koh-i-Taftan", lat: 25.13, lon: 67.43},
+            {name: "Bazman", lat: 28.52, lon: 70.25}
+        ];
+
+        // 歷史地震資料
+        var earthquakes = [
+            {name: "1950 Assam-Tibet M8.6", lat: 27.3, lon: 91.6},
+            {name: "2004 Indian Ocean M9.2", lat: 3.3, lon: 89.9},
+            {name: "2001 Gujarat M7.7", lat: 23.1, lon: 71.0},
+            {name: "1933 Sichuan M7.5", lat: 31.0, lon: 104.0},
+            {name: "1976 Sichuan M7.3", lat: 30.0, lon: 104.0}
+        ];
+
+        // 加入火山標記
+        volcanoes.forEach(function(v){
+            L.circleMarker([v.lat, v.lon], {
+                color: 'red',
+                radius: 6,
+                fillOpacity: 0.8
+            }).bindPopup("<b>火山:</b> " + v.name).addTo(map);
+        });
+
+        // 加入地震標記
+        earthquakes.forEach(function(eq){
+            L.circleMarker([eq.lat, eq.lon], {
+                color: 'yellow',
+                radius: 6,
+                fillOpacity: 0.8
+            }).bindPopup("<b>地震:</b> " + eq.name).addTo(map);
+        });
+    </script>
+</body>
+</html>
