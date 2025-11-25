@@ -1,78 +1,90 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <title>印度板塊火山與地震景觀特色</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        #map { width: 100%; height: 600px; }
-        .info { padding: 20px; max-width: 800px; margin: auto; }
-        h1, h2 { text-align: center; }
-        ul { line-height: 1.6; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>印度板塊：火山與地震的景觀特色</title>
+  <style>
+    body { font-family: "Helvetica Neue", Arial, sans-serif; margin:0; padding:0; color:#222; background:#f7f8fb; }
+    header { background:linear-gradient(90deg,#0b4f6c,#1f8a70); color:white; padding:28px 20px; text-align:center; }
+    main { max-width:1000px; margin:24px auto; padding:20px; background:white; box-shadow:0 6px 18px rgba(10,20,30,0.06); border-radius:8px; }
+    h1 { margin:0 0 6px; font-size:26px; }
+    p.lead { margin:6px 0 18px; color:#333; }
+    section { margin:18px 0; }
+    .grid { display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+    .card { padding:14px; border-radius:6px; background:#fff; border:1px solid #eef2f6; }
+    ul { margin:8px 0 0 18px; }
+    img.screenshot { width:100%; max-width:360px; border-radius:6px; border:1px solid #ddd; display:block; }
+    footer { text-align:center; font-size:13px; color:#666; padding:18px 0 40px; }
+    @media (max-width:900px) { .grid { grid-template-columns: 1fr; } img.screenshot { max-width:100%; } }
+  </style>
 </head>
 <body>
-    <h1>印度板塊火山與地震景觀特色</h1>
+  <header>
+    <h1>印度板塊的火山與地震 — 景觀特色概述</h1>
+    <div style="opacity:0.95; margin-top:8px;">火山島、熔岩海岸、褶皺山脈與地表崩塌：板塊構造塑造的地貌印記</div>
+  </header>
 
-    <div id="map"></div>
+  <main>
+    <p class="lead">印度板塊自古以來持續向北擠壓歐亞板塊，板塊碰撞與俯衝造成一系列壯麗且常具破壞性的地景：高山、斷層、火山島與海嘯沖刷的海岸地貌。本頁彙整主要景觀特色與代表事件，並附示意圖片供參考。</p>
 
-    <div class="info">
-        <h2>地理與景觀特色</h2>
-        <p>印度板塊自古以來持續向北擠壓歐亞板塊，造成多樣的地形與景觀：</p>
-        <ul>
-            <li><strong>高山與峽谷：</strong> 喜馬拉雅山脈因板塊碰撞而隆起，形成世界最高峰與深谷。</li>
-            <li><strong>火山：</strong> 例如Barren Island和Narcondam火山，火山活動塑造了小島地形與熔岩地貌。</li>
-            <li><strong>地震區：</strong> 歷史大地震頻繁，如1950年阿薩姆－西藏地震、2004年印度洋大地震，造成山崩、地裂及海嘯，影響沿岸景觀。</li>
-        </ul>
-        <p>這些地質作用使印度板塊區域的自然景觀極具壯觀與多樣性。</p>
+    <div class="grid">
+      <div>
+        <section class="card">
+          <h2>一、火山塑造的景觀</h2>
+          <p>印度板塊與鄰近海域具有少數活火山（例如 Barren Island、Narcondam），火山活動會產生：</p>
+          <ul>
+            <li><strong>孤立火山島</strong>：火山噴發堆積形成小島，島上常見熔岩流、火山口與火山碎屑物。</li>
+            <li><strong>熔岩海岸與黑色沙灘</strong>：熔岩流入海岸或冷卻碎裂，改變原始海岸線與海灘顏色。</li>
+            <li><strong>火山沉積平原</strong>：火山灰與碎屑物沉積使地表變平或形成新的土壤層。</li>
+          </ul>
+        </section>
+
+        <section class="card" style="margin-top:12px;">
+          <h2>二、地震造成的地貌</h2>
+          <p>強震與持續擠壓造就顯著地形：喜馬拉雅的隆起、斷層暴露與河道變動等：</p>
+          <ul>
+            <li><strong>褶皺與隆起山脈</strong>：印度板塊推擠歐亞板塊導致地層褶皺並向上隆起，形成喜馬拉雅山脈等。</li>
+            <li><strong>斷層線與斷崖</strong>：地震會在地表切割出斷層帶，長期風化形成斷崖與狹谷。</li>
+            <li><strong>山崩與坡地崩塌</strong>：強震誘發山坡失穩，造成大規模山崩，改變河谷地形。</li>
+            <li><strong>海嘯與海岸改寫</strong>：2004 印度洋大地震示警：海底位移會引發毀滅性海嘯，沖刷或重塑沿海地貌。</li>
+          </ul>
+        </section>
+
+        <section class="card" style="margin-top:12px;">
+          <h2>三、歷史大事件（代表性）</h2>
+          <ul>
+            <li><strong>1950 阿薩姆－西藏地震（M≈8.6）</strong>：強烈震動引發大量山崩、河道變動，長期改變局部地貌。</li>
+            <li><strong>2004 印度洋大地震（M≈9.2–9.3）</strong>：造成海嘯，沿岸生態與地形遭大規模改變。</li>
+            <li><strong>2001 古吉拉特地震（M≈7.7）</strong>：沿斷層帶的地表變形與城鎮破壞。</li>
+            <li><strong>1933 / 1976 四川強震</strong>：對山區坡地與河谷造成持久地形影響（示例作用，位於印度次大陸邊緣帶）。</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card" style="text-align:center;">
+          <h3>示意圖片</h3>
+          <!-- 下面的 src 使用你上傳的本機檔案路徑（開發環境時替換成相對路徑） -->
+          <img class="screenshot" src="/mnt/data/ff6c87ba-cf29-47ad-8eef-dd5e0dedd0bb.png" alt="截圖示意">
+          <div style="font-size:13px; color:#666; margin-top:8px;">示意：上傳的畫面截圖（若要在 GitHub Pages 顯示，請上傳此圖到 repo 並改用相對路徑）</div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h3>如何上傳到 GitHub 並啟用 Pages</h3>
+          <ol>
+            <li>把此檔案命名為 <code>index.html</code>，放在你的 repo 根目錄。</li>
+            <li>若有示意圖，放在 <code>images/</code> 資料夾，並把 <code>src</code> 改成 <code>images/your-image.png</code>。</li>
+            <li>在 GitHub repo 頁面，前往 <strong>Settings → Pages</strong>，選擇 Branch: <code>main</code>、Folder: <code>/ (root)</code>，按 Save。</li>
+            <li>等待 1 分鐘左右，Pages 會產生網址：<code>https://<你的帳號>.github.io/<repo-name>/</code>。</li>
+          </ol>
+        </div>
+      </aside>
     </div>
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-        // 建立地圖
-        var map = L.map('map').setView([20, 80], 4);
-
-        // 加入底圖
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // 火山資料
-        var volcanoes = [
-            {name: "Barren Island", lat: 11.27, lon: 83.53},
-            {name: "Narcondam", lat: 12.28, lon: 93.87},
-            {name: "Koh-i-Taftan", lat: 25.13, lon: 67.43},
-            {name: "Bazman", lat: 28.52, lon: 70.25}
-        ];
-
-        // 歷史地震資料
-        var earthquakes = [
-            {name: "1950 Assam-Tibet M8.6", lat: 27.3, lon: 91.6},
-            {name: "2004 Indian Ocean M9.2", lat: 3.3, lon: 89.9},
-            {name: "2001 Gujarat M7.7", lat: 23.1, lon: 71.0},
-            {name: "1933 Sichuan M7.5", lat: 31.0, lon: 104.0},
-            {name: "1976 Sichuan M7.3", lat: 30.0, lon: 104.0}
-        ];
-
-        // 加入火山標記
-        volcanoes.forEach(function(v){
-            L.circleMarker([v.lat, v.lon], {
-                color: 'red',
-                radius: 6,
-                fillOpacity: 0.8
-            }).bindPopup("<b>火山:</b> " + v.name).addTo(map);
-        });
-
-        // 加入地震標記
-        earthquakes.forEach(function(eq){
-            L.circleMarker([eq.lat, eq.lon], {
-                color: 'yellow',
-                radius: 6,
-                fillOpacity: 0.8
-            }).bindPopup("<b>地震:</b> " + eq.name).addTo(map);
-        });
-    </script>
+    <footer>
+      © 地質簡介頁 • 建議將圖片上傳到 repo 後使用相對路徑以便 GitHub Pages 正常顯示
+    </footer>
+  </main>
 </body>
 </html>
